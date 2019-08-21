@@ -1,6 +1,6 @@
 # moleskine
 
-A URL shortener / note sharing service, running at [linus.zone](https://linus.zone).
+A URL shortener / note sharing service, inspired by [linus.zone](https://linus.zone).
 
 ## Setup
 
