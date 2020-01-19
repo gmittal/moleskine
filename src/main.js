@@ -30,40 +30,14 @@ const tpl = params => {
 }
 
 app.get('/', (req, res) => {
-    //> Hack to return a fancy ANSI terminal result
-    //  when running $ curl linus.zone
-    if (req.header('User-Agent').includes('curl/')) {
-        res.set('Content-Type', 'text/plain');
-        res.send(`[1mLinus Lee[0m
-[33m===[0m
+    fs.readFile('static/index.html', 'utf8', (err, data) => {
+        if (err) {
+            throw err;
+        }
 
-[34mwww:    linus.zone/now
-email:  linus@thesephist.com
-social: @thesephist[0m
-
-[33m---[0m
-
-[32mFrontend Engineer, Repl.it
-    linus@repl.it
-
-Investment Partner, Dorm Room Fund
-    linus@drf.vc
-
-Director, Cal Hacks
-    linus@calhacks.io
-
-Computer Science, UC Berkeley
-    l7@berkeley.edu[0m\n`);
-    } else {
-        fs.readFile('static/index.html', 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
-
-            res.set('Content-Type', 'text/html');
-            res.send(data);
-        });
-    }
+        res.set('Content-Type', 'text/html');
+        res.send(data);
+    });
 });
 
 app.post('/new', async (req, res) => {
