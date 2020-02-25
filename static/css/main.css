@@ -1,6 +1,21 @@
 @font-face {
     font-family: 'Vulf Mono';
-    src: url(sansation_light.woff);
+    font-weight: 400;
+    font-style: normal;
+    src: url('/static/assets/fonts/vulf-mono/VulfMonoDemo-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Vulf Mono';
+    font-weight: 400;
+    font-style: italic;
+    src: url('/static/assets/fonts/vulf-mono/VulfMonoDemo-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Vulf Mono';
+    font-weight: 700;
+    src: url('/static/assets/fonts/vulf-mono/VulfMonoDemo-BoldItalic.otf');
 }
 
 html,
@@ -90,6 +105,12 @@ header {
     justify-content: space-between;
 }
 
+header h1 {
+    font-family: 'Vulf Mono', 'Helvetica', sans-serif;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+}
+
 header p {
     text-align: right
 }
@@ -138,7 +159,8 @@ textarea {
     font-size: 16px;
     border: 0;
     border-left: 2px solid #aaa;
-    font-family: 'Menlo', 'Monaco', 'Courier', monospace;
+    font-family: 'Vulf Mono', 'Menlo', 'Monaco', 'Courier', monospace;
+    font-weight: 400;
     box-shadow: none;
 }
 
@@ -181,7 +203,7 @@ textarea {
 
 textarea {
     resize: vertical;
-    min-height: 640px;
+    min-height: 400px;
 }
 
 button,
@@ -191,8 +213,8 @@ input[type="submit"] {
     background-image: linear-gradient(-90deg, #5e21d9, #12a5e2);
     color: #fff;
     cursor: pointer;
+    font-style: italic;
     display: block;
-    font-weight: bold;
     transition: opacity .2s;
     border: 0;
 }
@@ -225,6 +247,7 @@ img {
     font-weight: bold;
     text-align: center;
     margin: 12px 0;
+    font-family: 'Vulf Mono', 'Helvetica', 'Arial', sans-serif;
 }
 
 #expandNoteButton {
